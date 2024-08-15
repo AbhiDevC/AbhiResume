@@ -3,13 +3,13 @@
     <div class="container">
       <div class="bg-img">
         <div class="btn-container">
-            <a href="#" class="btn">Home</a>
-            <a href="#" class="btn">Skills</a>
-            <a href="#" class="btn">Education</a>
-            <a href="#" class="btn">Experience</a>
+            <a routerLink="" routerLinkActive="activeButton" ariaCurrentWhenActive="page" pathMatch="full" routerLinkActive="active" ariaCurrentWhenActive="page" class="btn">Home</a>
+            <a routerLink="skills" routerLinkActive="activeButton" ariaCurrentWhenActive="page" pathMatch="full" routerLinkActive="active" ariaCurrentWhenActive="page" class="btn">Skills</a>
+            <a routerLink="skills" class="btn">Education</a>
+            <a class="btn">Experience</a>
         </div>
+        <router-outlet></router-outlet>
       </div>
-    
     </div>
 </body>
 </html>
