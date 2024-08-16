@@ -82,7 +82,7 @@ h1 {
     background-color: #5bbfc6;
 }
 
-.btn:active {
+.btn.active {
     background-color: #0056b3; /* Active background color */
     
 }
