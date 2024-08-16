@@ -14,6 +14,8 @@ body, h1, a {
     box-sizing: border-box;
 }
 
+
+
 .container {
    background-color: rgb(187 176 176);
     height: 100%;
@@ -77,5 +79,10 @@ h1 {
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #5bbfc6;
+}
+
+.btn:active {
+    background-color: #0056b3; /* Active background color */
+    
 }
