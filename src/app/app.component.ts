@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
 import { SkillsComponent } from './skills/skills.component';
+import { EducationComponent } from './education/education.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,SkillsComponent, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet,SkillsComponent,RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

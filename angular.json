@@ -21,10 +21,8 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/assets"
+  
             ],
             "styles": [
               "src/styles.css"
@@ -57,6 +55,7 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+    
           "configurations": {
             "production": {
               "buildTarget": "resume:build:production"
@@ -79,6 +78,7 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
+              "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
