@@ -1,0 +1,38 @@
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100vh;
+  }
+
+ 
+  
+  .image-container {
+    width: 100%;
+    max-width: 500px;
+    height: 531px;
+    border-radius: 8px;
+    background-image: url("../../assets/images/abhi.png");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    margin: 20px auto;  
+}
+ 
+  
+  .content-container {
+    max-width: 60%;
+    padding: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .home-container {
+      flex-direction: column;
+    }
+  
+    .content-container {
+      max-width: 100%;
+    }
+  }
+  

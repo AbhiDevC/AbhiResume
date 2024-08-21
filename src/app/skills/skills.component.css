@@ -1,0 +1,92 @@
+/* Container for the entire skills section */
+.skills-container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    background-color: #f7f7f7; /* Light background color */
+    font-family: 'Arial', sans-serif; /* Font for the entire section */
+  }
+  
+  /* Styling for the left navigation */
+  .skills-nav {
+    width: 250px; /* Fixed width for the sidebar */
+    background-color: #333; /* Dark background for the sidebar */
+    padding: 20px;
+    color: #fff; /* White text color */
+    border-right: 2px solid #e7b40d; /* Add a border on the right */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+  
+  .skills-nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .skills-nav li {
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.1em;
+    border-radius: 4px; /* Rounded corners */
+  }
+  
+  .skills-nav li:hover {
+    background-color: #e7b40d; /* Highlight color on hover */
+    color: #333; /* Text color change on hover */
+  }
+  
+  /* Styling for the content area */
+  .skills-content {
+    flex: 1;
+    padding: 30px;
+    background-color: #ffffff; /* White background for content */
+    overflow-y: auto; /* Scrollable content if needed */
+  }
+  
+  .skills-content h2 {
+    margin-bottom: 20px;
+    color: #333; /* Dark color for headings */
+    border-bottom: 2px solid #e7b40d; /* Bottom border for headings */
+    padding-bottom: 10px;
+    font-size: 1.5em;
+  }
+  
+  .skills-content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .skills-nav li.active {
+    background-color: #e7b40d; /* Active background color */
+    color: #fff; /* Active text color */
+    font-weight: bold; /* Make active item bold */
+  }
+
+  
+  .skills-content ul li {
+    padding: 10px 0;
+    font-size: 1.1em;
+    border-bottom: 1px solid #ddd; /* Add a subtle divider between items */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .skills-container {
+      flex-direction: column; /* Stack the nav and content vertically */
+    }
+    
+    .skills-nav {
+      width: 100%;
+      border-right: none; /* Remove right border */
+      border-bottom: 2px solid #e7b40d; /* Add bottom border */
+    }
+
+    .skills-nav li.active {
+        background-color: #e7b40d; /* Active background color */
+        color: #fff; /* Active text color */
+        font-weight: bold; /* Make active item bold */
+      }
+
+    .skills-content {
+      padding: 20px;
+    }
+  }
+  

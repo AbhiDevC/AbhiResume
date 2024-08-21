@@ -1,0 +1,105 @@
+/* Container for the entire experience section */
+.experience-container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    background-color: #f7f7f7; /* Light background color */
+    font-family: 'Arial', sans-serif; /* Font for the entire section */
+  }
+  
+  /* Styling for the left navigation */
+  .experience-nav {
+    width: 250px; /* Fixed width for the sidebar */
+    background-color: #333; /* Dark background for the sidebar */
+    padding: 20px;
+    color: #fff; /* White text color */
+    border-right: 2px solid #e7b40d; /* Add a border on the right */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+  
+  .experience-nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .experience-nav li {
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.1em;
+    border-radius: 4px; /* Rounded corners */
+  }
+  
+  .experience-nav li:hover {
+    background-color: #e7b40d; /* Highlight color on hover */
+    color: #333; /* Text color change on hover */
+  }
+  
+  .experience-nav li.active {
+    background-color: #e7b40d; /* Active background color */
+    color: #fff; /* Active text color */
+    font-weight: bold; /* Make active item bold */
+  }
+  
+ /* Styling for the content area */
+.experience-content {
+    flex: 1;
+    padding: 30px;
+    background-color: #ffffff; /* White background for content */
+    overflow-y: auto; /* Scrollable content if needed */
+  }
+  
+  .experience-content h3 {
+    margin-bottom: 20px;
+    color: #333; /* Dark color for headings */
+    border-bottom: 2px solid #e7b40d; /* Bottom border for headings */
+    padding-bottom: 10px;
+    font-size: 1.5em;
+  }
+  
+  .experience-content h4 {
+    font-size: 1.2em;
+    color: gray;
+    margin-bottom: 5px;
+  }
+  
+  .experience-content span {
+    display: block;
+    font-size: 1rem;
+    color: darkgray;
+    margin-bottom: 15px;
+  }
+  
+  .experience-content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .experience-content ul li {
+    padding: 10px 0;
+    font-size: 1.1em;
+    border-bottom: 1px solid #ddd; /* Add a subtle divider between items */
+    text-align: justify; /* Justify text */
+  }
+  
+  /* Ensuring the last line of justified text aligns correctly */
+  .experience-content ul li:last-child {
+    margin-bottom: 0; /* Remove bottom margin from the last item */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .experience-container {
+      flex-direction: column; /* Stack the nav and content vertically */
+    }
+    
+    .experience-nav {
+      width: 100%;
+      border-right: none; /* Remove right border */
+      border-bottom: 2px solid #e7b40d; /* Add bottom border */
+    }
+  
+    .experience-content {
+      padding: 20px;
+    }
+  }
+  

@@ -1,0 +1,33 @@
+<div class="experience-container">
+  <!-- Left Navigation -->
+  <nav class="experience-nav">
+    <ul>
+      <li 
+        *ngFor="let job of experienceList; let i = index" 
+        (click)="selectJob(i)"
+        [class.active]="selectedJob === job">
+        {{ job.company }}
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Content Area -->
+  <div class="experience-content">
+    <div *ngIf="selectedJob">
+      <h3>{{ selectedJob.title }}</h3>
+      <h4>{{ selectedJob.company }} - {{ selectedJob.location }}</h4>
+      <span>{{ selectedJob.period }}</span>
+
+      <ul *ngIf="isArray(selectedJob.description); else singleDescription">
+        <li *ngFor="let line of selectedJob.description">
+          {{ line }}
+        </li>
+      </ul>
+
+      <ng-template #singleDescription>
+        <p>{{ selectedJob.description }}</p>
+      </ng-template>
+      
+    </div>
+  </div>
+</div>

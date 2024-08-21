@@ -1,0 +1,62 @@
+<div class="skills-container">
+    <div class="skills-nav">
+      <ul>
+        <li 
+        (click)="selectSkill('programming')"
+        [class.active]="isSkillSelected('programming')">Programming Languages</li>
+        <li (click)="selectSkill('databases')"
+        [class.active]="isSkillSelected('databases')">Databases</li>
+        <li (click)="selectSkill('frameworks')"
+        [class.active]="isSkillSelected('frameworks')">Frameworks</li>
+        <li (click)="selectSkill('tools')"
+        [class.active]="isSkillSelected('tools')">Tools</li>
+      </ul>
+    </div>
+    
+    <div class="skills-content">
+      <div *ngIf="selectedSkill === 'programming'">
+        <h2>Programming Languages</h2>
+        <ul>
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>Python</li>
+          <li>Java</li>
+          <!-- Add more programming languages -->
+        </ul>
+      </div>
+  
+      <div *ngIf="selectedSkill === 'databases'">
+        <h2>Databases</h2>
+        <ul>
+          <li>MySQL</li>
+          <li>PostgreSQL</li>
+          <li>MongoDB</li>
+          <li>SQLite</li>
+          <!-- Add more databases -->
+        </ul>
+      </div>
+  
+      <div *ngIf="selectedSkill === 'frameworks'">
+        <h2>Frameworks</h2>
+        <ul>
+          <li>Angular</li>
+          <li>React</li>
+          <li>Vue.js</li>
+          <li>Django</li>
+          <!-- Add more frameworks -->
+        </ul>
+      </div>
+      <div *ngIf="selectedSkill === 'tools'">
+        <h2>Tools</h2>
+        <ul>
+          <li>Git</li>
+          <li>Swagger</li>
+          <li>Postman</li>
+          <li>Power Apps</li>
+          <li>Power BI</li>
+          <!-- Add more databases -->
+        </ul>
+      </div>
+    </div>
+  </div>
+  
