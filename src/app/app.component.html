@@ -1,29 +1,48 @@
-<html>
-<body>
-    <div class="container">
-      <div class="bg-img">
-        <div class="btn-container">
-            <a 
-            routerLink="home" 
-            routerLinkActive="active" 
-            ariaCurrentWhenActive="page" 
-            pathMatch="full"
-            routerLinkActive="active" 
-            class="btn"
-            >Home</a>
-            <a 
-            routerLink="skills" 
-            routerLinkActive="active" 
-            ariaCurrentWhenActive="page" 
-            class="btn">Skills</a>
-            <a routerLink="education"   routerLinkActive="active"  class="btn">Education</a>
-            <a  routerLink="experience" 
-            routerLinkActive="active" 
-            ariaCurrentWhenActive="page" 
-            class="btn">Experience</a>
-        </div>
-        <router-outlet></router-outlet>
+
+<mat-sidenav #sidenav mode="over" [opened]="false" *ngIf="isMobile">
+    <mat-nav-list>
+      <a mat-list-item href="#">Home</a>
+      <a mat-list-item href="#">About</a>
+      <a mat-list-item href="#">Services</a>
+      <a mat-list-item href="#">Contact</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button *ngIf="isMobile" mat-icon-button (click)="sidenav?.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>My Application</span>
+    
+  
+<div *ngIf="!isMobile"> 
+
+  <div class="container">
+    <div class="bg-img">
+      <div class="btn-container">
+          <a 
+          routerLink="home" 
+          routerLinkActive="active" 
+          ariaCurrentWhenActive="page" 
+          pathMatch="full"
+          routerLinkActive="active" 
+          class="btn"
+          >Home</a>
+          <a 
+          routerLink="skills" 
+          routerLinkActive="active" 
+          ariaCurrentWhenActive="page" 
+          class="btn">Skills</a>
+          <a routerLink="education"   routerLinkActive="active"  class="btn">Education</a>
+          <a  routerLink="experience" 
+          routerLinkActive="active" 
+          ariaCurrentWhenActive="page" 
+          class="btn">Experience</a>
       </div>
+      <router-outlet></router-outlet>
     </div>
-</body>
-</html>
+  </div>
+
+</div>
+
