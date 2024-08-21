@@ -16,7 +16,11 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,SkillsComponent,RouterLink, RouterLinkActive, CommonModule, 
+  imports: [RouterOutlet,
+    SkillsComponent,
+    RouterLink, 
+    RouterLinkActive, 
+    CommonModule, 
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
