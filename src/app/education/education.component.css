@@ -66,3 +66,27 @@
     max-width: 100%;          /* Ensure the image fits within the container */
     max-height: 100%;         /* Prevent the image from overflowing */
   }
+
+  /* Styles for phone screens (max-width: 600px) */
+@media (max-width: 600px) {
+  .education-container {
+    padding: 10px; /* Adjust padding for smaller screens */
+    font-size: 14px; /* Adjust font size for readability */
+  }
+
+  .education-item {
+    margin-bottom: 10px; /* Adjust margin for smaller screens */
+  }
+
+  /* Example of a flexible layout */
+  .education-list {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .education-item {
+    padding: 10px; /* Add padding inside each item */
+    border: 1px solid #ddd; /* Add a border for visual separation */
+    border-radius: 4px; /* Round corners */
+  }
+}

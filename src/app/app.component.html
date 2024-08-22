@@ -1,48 +1,57 @@
-
-<mat-sidenav #sidenav mode="over" [opened]="false" *ngIf="isMobile">
+<mat-sidenav-container>
+  <!-- Sidenav for mobile view -->
+  <mat-sidenav *ngIf="isMobile" #sidenav mode="over" (click)="onNavItemClick()">
+    <!-- Sidenav content -->
     <mat-nav-list>
-      <a mat-list-item href="#">Home</a>
-      <a mat-list-item href="#">About</a>
-      <a mat-list-item href="#">Services</a>
-      <a mat-list-item href="#">Contact</a>
+      <a mat-list-item routerLink="home" (click)="onNavItemClick()">Home</a>
+      <a mat-list-item routerLink="skills" (click)="onNavItemClick()">Skills</a>
+      <a mat-list-item routerLink="education" (click)="onNavItemClick()">Education</a>
+      <a mat-list-item routerLink="experience" (click)="onNavItemClick()">Experience</a>
     </mat-nav-list>
   </mat-sidenav>
-
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button *ngIf="isMobile" mat-icon-button (click)="sidenav?.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>My Application</span>
-    </mat-sidenav-content>
   
-<div *ngIf="!isMobile"> 
-
-  <div class="container">
-    <div class="bg-img">
-      <div class="btn-container">
+  <!-- Main content -->
+  <mat-sidenav-content>
+    <!-- Toggle button for mobile view -->
+    <button *ngIf="isMobile" mat-icon-button (click)="toggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    
+    <!-- Content for both mobile and wide screens -->
+    <div *ngIf="!isMobile" class="container">
+      <div class="bg-img">
+        <div class="btn-container">
           <a 
-          routerLink="home" 
-          routerLinkActive="active" 
-          ariaCurrentWhenActive="page" 
-          pathMatch="full"
-          routerLinkActive="active" 
-          class="btn"
+            routerLink="home" 
+            routerLinkActive="active" 
+            ariaCurrentWhenActive="page" 
+            class="btn"
           >Home</a>
           <a 
-          routerLink="skills" 
-          routerLinkActive="active" 
-          ariaCurrentWhenActive="page" 
-          class="btn">Skills</a>
-          <a routerLink="education"   routerLinkActive="active"  class="btn">Education</a>
-          <a  routerLink="experience" 
-          routerLinkActive="active" 
-          ariaCurrentWhenActive="page" 
-          class="btn">Experience</a>
+            routerLink="skills" 
+            routerLinkActive="active" 
+            ariaCurrentWhenActive="page" 
+            class="btn"
+          >Skills</a>
+          <a 
+            routerLink="education" 
+            routerLinkActive="active" 
+            class="btn"
+          >Education</a>
+          <a 
+            routerLink="experience" 
+            routerLinkActive="active" 
+            ariaCurrentWhenActive="page" 
+            class="btn"
+          >Experience</a>
+        </div>
+        <router-outlet></router-outlet>
       </div>
+    </div>
+    
+    <!-- Router outlet for mobile view -->
+    <div *ngIf="isMobile" class="mobile-content">
       <router-outlet></router-outlet>
     </div>
-  </div>
-
-</div>
-
+  </mat-sidenav-content>
+</mat-sidenav-container>
