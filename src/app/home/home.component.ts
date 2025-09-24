@@ -6,13 +6,10 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [],
+  standalone: false,
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
-export class HomeComponent{
-
-  constructor(private router: Router) {} 
- 
+export class HomeComponent {
+  constructor(private router: Router) {}
 }

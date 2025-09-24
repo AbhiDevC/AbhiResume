@@ -3,10 +3,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
-  standalone: true,
-  imports: [CommonModule],
+  standalone: false,
   templateUrl: './skills.component.html',
-  styleUrl: './skills.component.css'
+  styleUrl: './skills.component.css',
 })
 export class SkillsComponent {
   selectedSkill: string = 'programming'; // Default skill to display
