@@ -41,8 +41,8 @@ a {
   width: 100%;
   margin: 0;
 }
-.mobile-sidenav {
-  width: 250px; /* Adjust width as needed */
+button.ng-star-inserted {
+  width: 35px; /* Adjust width as needed */
 }
 
 /* Side Nav Styles */
@@ -181,5 +181,20 @@ mat-sidenav-content {
 
   .mobile-content {
     display: none; /* Hide mobile content on larger screens */
+  }
+}
+@media (max-width: 600px) {
+  .carousel-button {
+    width: 35px;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .carousel-button.prev {
+    left: 2px;
+  }
+
+  .carousel-button.next {
+    right: 2px;
   }
 }
