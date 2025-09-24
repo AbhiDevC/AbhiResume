@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { EducationComponent } from './education/education.component';
+import { SkillsComponent } from './skills/skills.component';
+import { ExpereienceComponent } from './expereience/expereience.component';
 import { routes } from './app.routes';
 
 // Angular Material
@@ -13,7 +15,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
 @NgModule({
-  declarations: [AppComponent, EducationComponent],
+  declarations: [
+    AppComponent,
+    EducationComponent,
+    SkillsComponent,
+    ExpereienceComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
