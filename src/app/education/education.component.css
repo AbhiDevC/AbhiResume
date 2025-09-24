@@ -1,7 +1,7 @@
 .embla {
   overflow: hidden;
   width: 60%;
-  height: 65%;
+  height: 70%;
 }
 
 .embla__container {
@@ -17,7 +17,7 @@
 .embla__slide {
   flex: 0 0 100%; /* slide takes full width of carousel */
   max-width: 100%; /* ensure slide never exceeds carousel width */
-  height: 300px; /* or any card height you want */
+  height: 350px; /* or any card height you want */
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
