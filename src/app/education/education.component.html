@@ -1,4 +1,4 @@
-<div class="training-container">
+<!-- <div class="training-container">
   <h1>Training & Education</h1>
   <div *ngFor="let training of trainings" class="training-entry">
     <h2>{{ training.title }}</h2>
@@ -9,5 +9,22 @@
     <div class="image-container">
       <img [src]="training.image" />
     </div>
+  </div>
+</div> -->
+<div class="carousel-wrapper">
+  <div #carousel class="embla">
+    <div class="embla__container">
+      <div class="embla__slide" *ngFor="let training of trainings">
+        <img [src]="training.image" [alt]="training.title" loading="lazy" />
+        <div class="training-info">
+          <h3>{{ training.title }}</h3>
+          <h4>{{ training.institution }}</h4>
+          <p>{{ training.description }}</p>
+          <span class="year">{{ training.year }}</span>
+        </div>
+      </div>
+    </div>
+    <button class="prev" (click)="prev()">‹</button>
+    <button class="next" (click)="next()">›</button>
   </div>
 </div>

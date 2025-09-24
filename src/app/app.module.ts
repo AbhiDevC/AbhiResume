@@ -13,6 +13,7 @@ import { routes } from './app.routes';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { CarouselModule } from '@coreui/angular';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    CarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
