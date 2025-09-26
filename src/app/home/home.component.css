@@ -1,38 +1,48 @@
 .home-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  height: 100vh;
+}
+
+.image-container {
+  width: 100%;
+  max-width: 500px;
+  height: 531px;
+  border-radius: 8px;
+  background-image: url("../../assets/images/abhi.png");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  margin: 20px auto;
+}
+
+.content-container {
+  max-width: 80%;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
   }
 
- 
-  
-  .image-container {
-    width: 100%;
-    max-width: 500px;
-    height: 531px;
-    border-radius: 8px;
-    background-image: url("../../assets/images/abhi.png");
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    margin: 20px auto;  
-}
- 
-  
   .content-container {
-    max-width: 60%;
-    padding: 20px;
+    max-width: 100%;
   }
-  
-  @media (max-width: 768px) {
-    .home-container {
-      flex-direction: column;
-    }
-  
-    .content-container {
-      max-width: 100%;
-    }
-  }
-  
+}
+/* contact.component.css */
+.linkedin-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0a66c2;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.linkedin-btn:hover {
+  background-color: #004182;
+}

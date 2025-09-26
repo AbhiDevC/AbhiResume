@@ -1,1 +1,62 @@
-<p>contact-page works!</p>
+<div class="contact-page">
+  <div class="contact-form-container">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <!-- First Name -->
+      <label for="firstName">First Name</label>
+      <input id="firstName" type="text" formControlName="firstName" />
+      <div
+        class="error"
+        *ngIf="
+          contactForm.get('firstName')?.touched &&
+          contactForm.get('firstName')?.invalid
+        "
+      >
+        First name is required (min 2 chars).
+      </div>
+
+      <!-- Last Name -->
+      <label for="lastName">Last Name</label>
+      <input id="lastName" type="text" formControlName="lastName" />
+      <div
+        class="error"
+        *ngIf="
+          contactForm.get('lastName')?.touched &&
+          contactForm.get('lastName')?.invalid
+        "
+      >
+        Last name is required (min 2 chars).
+      </div>
+
+      <!-- Phone -->
+      <label for="phone">Phone</label>
+      <input
+        id="phone"
+        type="text"
+        formControlName="phone"
+        placeholder="Enter your mobile number"
+      />
+      <div
+        class="error"
+        *ngIf="
+          contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid
+        "
+      >
+        Enter a valid 10-digit phone number.
+      </div>
+
+      <!-- Email -->
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" />
+      <div
+        class="error"
+        *ngIf="
+          contactForm.get('email')?.touched && contactForm.get('email')?.invalid
+        "
+      >
+        Enter a valid email address.
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
