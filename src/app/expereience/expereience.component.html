@@ -1,17 +1,16 @@
 <div class="experience-container">
-  <!-- Left Navigation -->
   <nav class="experience-nav">
     <ul>
-      <li 
-        *ngFor="let job of experienceList; let i = index" 
+      <li
+        *ngFor="let job of experienceList; let i = index"
         (click)="selectJob(i)"
-        [class.active]="selectedJob === job">
+        [class.active]="selectedJob === job"
+      >
         {{ job.company }}
       </li>
     </ul>
   </nav>
 
-  <!-- Content Area -->
   <div class="experience-content">
     <div *ngIf="selectedJob">
       <h3>{{ selectedJob.title }}</h3>
@@ -27,7 +26,6 @@
       <ng-template #singleDescription>
         <p>{{ selectedJob.description }}</p>
       </ng-template>
-      
     </div>
   </div>
 </div>

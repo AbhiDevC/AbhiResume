@@ -110,3 +110,14 @@ textarea {
   resize: vertical;
   border-radius: 8px;
 }
+
+@media (max-width: 767px) {
+  .contact-page {
+    display: flex;
+    flex-direction: column;
+    margin-left: -26px;
+  }
+  .carousel-container {
+    height: 300px;
+  }
+}

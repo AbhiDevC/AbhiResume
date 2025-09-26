@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import emailjs from '@emailjs/browser';
 @Component({
   selector: 'app-contact-page',
   templateUrl: './contact-page.component.html',
@@ -38,16 +38,32 @@ export class ContactPageComponent {
       lastName: ['', [Validators.required, Validators.minLength(2)]],
       phone: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
       email: ['', [Validators.required, Validators.email]],
+      message: ['', [Validators.required, Validators.minLength(10)]],
     });
   }
 
   onSubmit() {
     if (this.contactForm.valid) {
-      console.log('Form Submitted:', this.contactForm.value);
-      alert('Form submitted successfully!');
-      this.contactForm.reset();
+      const templateParams = this.contactForm.value;
+
+      emailjs
+        .send(
+          'service_l59of7d',
+          'template_3if9n72',
+          this.contactForm.value,
+          '6rB4QasMNvboyHkUf'
+        )
+        .then(
+          (response) => {
+            alert('Message sent successfully!');
+            this.contactForm.reset();
+          },
+          (error) => {
+            alert('Failed to send message.');
+          }
+        );
     } else {
-      this.contactForm.markAllAsTouched();
+      alert('Please fill all fields correctly.');
     }
   }
 }

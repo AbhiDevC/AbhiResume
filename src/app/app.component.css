@@ -110,6 +110,11 @@ mat-sidenav-content {
     height: 100%; /* Full height on small screens */
   }
 
+  .contact-page {
+    display: flex;
+    flex-direction: column;
+  }
+
   /* For a selected or active item */
 
   .mat-mdc-nav-list .mat-mdc-list-item {

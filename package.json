@@ -23,6 +23,7 @@
     "@coreui/angular": "^4.8.0",
     "@coreui/icons": "^3.0.1",
     "@coreui/icons-angular": "~5.2",
+    "@emailjs/browser": "^4.4.1",
     "embla-carousel": "^8.6.0",
     "ngx-slick-carousel": "^18.0.0",
     "rxjs": "~7.8.0",
