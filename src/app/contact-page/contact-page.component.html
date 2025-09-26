@@ -1,9 +1,25 @@
 <div class="contact-page">
+  <div class="carousel-container">
+    <div
+      class="carousel-track"
+      [style.transform]="'translateX(-' + currentIndex * 100 + '%)'"
+    >
+      <div class="carousel-slide" *ngFor="let img of images">
+        <img [src]="img" alt="slide" />
+      </div>
+    </div>
+  </div>
+
   <div class="contact-form-container">
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
       <!-- First Name -->
       <label for="firstName">First Name</label>
-      <input id="firstName" type="text" formControlName="firstName" />
+      <input
+        id="firstName"
+        type="text"
+        formControlName="firstName"
+        placeholder="John"
+      />
       <div
         class="error"
         *ngIf="
@@ -16,7 +32,12 @@
 
       <!-- Last Name -->
       <label for="lastName">Last Name</label>
-      <input id="lastName" type="text" formControlName="lastName" />
+      <input
+        id="lastName"
+        type="text"
+        formControlName="lastName"
+        placeholder="Doe"
+      />
       <div
         class="error"
         *ngIf="
@@ -46,7 +67,12 @@
 
       <!-- Email -->
       <label for="email">Email</label>
-      <input id="email" type="email" formControlName="email" />
+      <input
+        id="email"
+        type="email"
+        formControlName="email"
+        placeholder="Enter email address"
+      />
       <div
         class="error"
         *ngIf="
@@ -56,7 +82,28 @@
         Enter a valid email address.
       </div>
 
-      <button type="submit">Submit</button>
+      <!-- Message / Textarea -->
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        formControlName="message"
+        placeholder="Write your message here"
+        rows="5"
+      ></textarea>
+      <div
+        class="error"
+        *ngIf="
+          contactForm.get('message')?.touched &&
+          contactForm.get('message')?.invalid
+        "
+      >
+        Message is required (min 10 chars).
+      </div>
+
+      <br />
+      <div class="btncont">
+        <button type="submit">Submit</button>
+      </div>
     </form>
   </div>
 </div>

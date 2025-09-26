@@ -7,25 +7,36 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrl: './contact-page.component.css',
 })
 export class ContactPageComponent {
-  slideConfig = {
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    dots: true,
-    infinite: true,
-    responsive: [{ breakpoint: 768, settings: { slidesToShow: 1 } }],
-  };
-
+  currentIndex = 0;
+  intervalId: any;
   images: string[] = [
     'assets/images/angular.png',
     'assets/images/react.png',
     'assets/images/HTML.png',
   ];
+  ngOnInit() {
+    this.intervalId = setInterval(() => this.next(), 2000);
+  }
+
+  ngOnDestroy() {
+    if (this.intervalId) clearInterval(this.intervalId);
+  }
+
+  next() {
+    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+  }
+
+  prev() {
+    this.currentIndex =
+      (this.currentIndex - 1 + this.images.length) % this.images.length;
+  }
+
   contactForm: FormGroup;
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(2)]],
       lastName: ['', [Validators.required, Validators.minLength(2)]],
-      phone: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]], // 10-digit phone
+      phone: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
       email: ['', [Validators.required, Validators.email]],
     });
   }
